@@ -1,0 +1,18 @@
+$colors: (
+    "main-background": hsl(205, 44%, 93%),
+    "card-background-1": hsl(0, 0%, 100%),
+    "card-background-2": hsl(174, 62%, 43%),
+    "card-background-3": hsla(0, 0%, 100%, 0.15),
+    "button-background": hsl(71, 73%, 54%),
+    "paragraph-text": hsl(218, 22%, 67%),
+    //temp
+    "heading-text": hsl(179, 62%, 43%),
+);
+
+
+// Add below as func to sass-toolkit
+@mixin colors-definitions {
+    @each $name, $color in $colors {
+        --#{$name}: #{$color};
+    }
+}

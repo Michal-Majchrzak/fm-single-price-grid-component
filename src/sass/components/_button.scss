@@ -1,0 +1,20 @@
+@use "../sass-toolkit" as st;
+@use "../config";
+
+.btn {
+    display: block;
+    padding-top: st.px2rem(15);
+    padding-bottom: st.px2rem(14);
+    //Appearance
+    background-color: var(--button-background);
+    border: none;
+    border-radius: st.px2rem(5);
+    box-shadow: var(--button-box-shadow);
+    //Typography
+    @include config.font-button;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+}
+
+// add box shadow and definitions

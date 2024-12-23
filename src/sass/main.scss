@@ -1,1 +1,9 @@
 @use "sass-toolkit" as st;
+@use "config";
+@use "components";
+
+:root {
+    @include config.colors-definitions;
+    @include config.shadows-definitions;
+    @include config.font-default;
+}

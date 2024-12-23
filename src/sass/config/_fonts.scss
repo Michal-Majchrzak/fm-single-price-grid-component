@@ -1,0 +1,59 @@
+@use "../sass-toolkit" as st;
+
+@mixin default {
+    font-family: "Karla", serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@mixin main-heading {
+    font-size: st.px2rem(20);
+    font-weight: 700;
+    letter-spacing: st.px2rem(-0.25);
+}
+
+@mixin second-heading {
+    font-size: st.px2rem(20);
+    font-weight: 700;
+    letter-spacing: st.px2rem(-0.19);
+    line-height: 1.33;
+}
+
+@mixin third-heading {
+    font-size: st.px2rem(18);
+    font-weight: 700;
+    letter-spacing: st.px2rem(-0.22);
+}
+
+@mixin main-paragraph {
+    font-size: st.px2rem(14);
+    line-height: 1.85;
+    letter-spacing: st.px2rem(-0.17);
+}
+
+@mixin second-paragraph {
+    font-size: st.px2rem(14);
+    line-height: 1.428;
+    letter-spacing: st.px2rem(-0.17);
+}
+
+@mixin third-paragraph {
+    line-height: 1.625;
+    letter-spacing: st.px2rem(-0.2);
+}
+
+@mixin third-parapgraph-50 {
+    @include third-paragraph;
+    opacity: 0.5;
+}
+
+@mixin large-text {
+    font-size: st.px2rem(32);
+    font-weight: 700;
+    letter-spacing: st.px2rem(-0.4);
+}
+
+@mixin button {
+    font-weight: 700;
+    letter-spacing: st.px2rem(-0.2);
+}

@@ -1,0 +1,10 @@
+$shadows: (
+    "button": 0 10px 10px 0 hsla(0, 0%, 0%, 0.1),
+    "card": 0 15px 30px 0 hsla(212, 100%, 33%, 0.15),
+);
+
+@mixin shadows-definitions {
+    @each $element, $value in $shadows {
+        --#{$element}-box-shadow: #{$value};
+    }
+}
