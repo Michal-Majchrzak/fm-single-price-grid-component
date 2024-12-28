@@ -10,6 +10,16 @@
 }
 
 body {
+    $mobile-width: 375;
+    $desktp-width: 700;
+    $pt-mobile: 72;
+    $pt-desktop: 163;
+
     background-color: var(--main-background);
-    padding: 72px 32px 62px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: st.px2rem(62) st.px2rem(32);
+    padding-top: st.linear-func-clamp($pt-mobile, $mobile-width, $pt-desktop, $desktp-width);
+    min-height: 100dvh;
 }

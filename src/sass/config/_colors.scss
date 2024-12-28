@@ -8,8 +8,6 @@ $colors: (
     "paragraph-text-2": hsla(0, 0%, 100%, 0.75),
 );
 
-
-// Add below as func to sass-toolkit
 @mixin colors-definitions {
     @each $name, $color in $colors {
         --#{$name}: #{$color};

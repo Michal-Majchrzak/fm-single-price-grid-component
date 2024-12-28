@@ -5,15 +5,18 @@
 $mobile-width: 375;
 $desktop-width:700;
 
-$padding-t: 28px;
-$padding-lr: 24px;
-
 .card {
-    //border-radius: st.px2rem(5); mobile
-    border-radius: st.px2rem(8);
+    $br-mobile: 5;
+    $br-desktop: 8;
+
+    $p-mobile: 24;
+    $p-desktop: 40;
+
+    --sections-padding: #{st.linear-func-clamp($p-mobile, $mobile-width, $p-desktop, $desktop-width)};
+    border-radius: st.linear-func-clamp($br-mobile, $mobile-width, $br-desktop, $desktop-width);
     box-shadow: var(--card-box-shadow);
     min-width: min-content;
-    max-width: 635px;
+    max-width: st.px2rem(635);
 
     & > :first-child {
         border-top-left-radius: inherit;
@@ -28,24 +31,30 @@ $padding-lr: 24px;
 // Section `Join...`
 .section-join {
     background-color: var(--card-background-1);
-    //padding: 28px 24px 32px 24px; mobile
-    padding: 40px;
+    padding: var(--sections-padding);
 
     h1 {
+        $mt-mobile: 4;
+        $mt-desktop: 0;
+
+        margin-top: st.linear-func-clamp($mt-desktop, $desktop-width, $mt-mobile, $mobile-width);
+        margin-bottom: st.px2rem(24);
         //Font
         @include config.font-main-heading;
         color: var(--card-background-2);
-        margin-bottom: 24px;
     }
     h2 {
         $mb-mobile: 16;
         $mb-desktop: 11;
+        margin-bottom: st.linear-func-clamp($mb-desktop, $desktop-width, $mb-mobile, $mobile-width);
         //Font
         @include config.font-second-heading;
         color: var(--button-background);
-        margin-bottom: st.linear-func-clamp($mb-desktop, $desktop-width, $mb-mobile, $mobile-width);
     }
     p {
+        $mb-mobile: 6;
+        $mb-desktop: 0;
+        margin-bottom: st.linear-func-clamp($mb-desktop, $desktop-width, $mb-mobile, $mobile-width);
         //Font
         @include config.font-main-paragraph;
         color: var(--paragraph-text);
@@ -60,29 +69,28 @@ $padding-lr: 24px;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 
     h2 {
-        padding-bottom: 17px;
+        padding-bottom: st.px2rem(17);
         @include config.font-third-heading;
     }
 }
 
 // Section `Sing-Up`
 .section-sing-up {
-    //padding: 24px; mobile
-    padding: 40px;
+    padding: var(--sections-padding);
 
     .price-box {
         display: flex;
         align-items: center;
-        gap: 11px;
+        gap: st.px2rem(11);
     }
 
     .price-desc {
-        margin-top: 4px;
-        margin-bottom: 26px;
+        margin-top: st.px2rem(4);
+        margin-bottom: st.px2rem(26);
     }
 
     p {
-        @include config.font-third-paragraph; // Working on sign up section text
+        @include config.font-third-paragraph;
     }
     .large-text {
         @include config.font-large-text;
@@ -95,8 +103,7 @@ $padding-lr: 24px;
 // Section `Why Us`
 .section-why-us {
     background-color: var(--card-background-3);
-    //padding: 24px; mobile
-    padding: 40px;
+    padding: var(--sections-padding);
 
     ul {
         padding: 0;

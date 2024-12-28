@@ -18,7 +18,7 @@ figma
 design
 README-template.md
 style-guide.md
-build-css
-build-css-min
+build-css.sh
+build-css-min.sh
 checklist.md
 sass-toolkit
