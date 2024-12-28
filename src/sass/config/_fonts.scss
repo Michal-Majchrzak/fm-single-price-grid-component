@@ -6,31 +6,45 @@
     font-weight: 400;
 }
 
+$mobile-width: 375;
+$desktop-width: 700;
+
+// Join our...
 @mixin main-heading {
-    font-size: st.px2rem(20);
+    $fs-mobile: 20;
+    $fs-desktop: 24;
+
+    font-size: st.linear-func-clamp($fs-mobile, $mobile-width, $fs-desktop, $desktop-width);
     font-weight: 700;
-    letter-spacing: st.px2rem(-0.25);
+    letter-spacing: st.px2rem(-0.25); //Desk -0.3
 }
 
+//30-day...
 @mixin second-heading {
-    font-size: st.px2rem(20);
+    $fs-mobile: 15;
+    $fs-desktop: 18;
+    
+    font-size: st.linear-func-clamp($fs-mobile, $mobile-width, $fs-desktop, $desktop-width);
     font-weight: 700;
-    letter-spacing: st.px2rem(-0.19);
-    line-height: 1.33;
+    letter-spacing: st.px2rem(-0.19); // -0.22px
+    line-height: st.px2rem(21);
 }
-
+//`Monthly... & Why Us`
 @mixin third-heading {
     font-size: st.px2rem(18);
     font-weight: 700;
     letter-spacing: st.px2rem(-0.22);
 }
-
+//`Gain access...`
 @mixin main-paragraph {
-    font-size: st.px2rem(14);
-    line-height: 1.85;
+    $fs-mobile: 14;
+    $fs-desktop: 16;
+
+    font-size: st.linear-func-clamp($fs-mobile, $mobile-width, $fs-desktop, $desktop-width);
+    line-height: st.px2rem(26);
     letter-spacing: st.px2rem(-0.17);
 }
-
+//`Tutorials by...`
 @mixin second-paragraph {
     font-size: st.px2rem(14);
     line-height: 1.428;
@@ -42,7 +56,7 @@
     letter-spacing: st.px2rem(-0.2);
 }
 
-@mixin third-parapgraph-50 {
+@mixin third-paragraph-50 {
     @include third-paragraph;
     opacity: 0.5;
 }
@@ -51,6 +65,7 @@
     font-size: st.px2rem(32);
     font-weight: 700;
     letter-spacing: st.px2rem(-0.4);
+    line-height: normal;
 }
 
 @mixin button {

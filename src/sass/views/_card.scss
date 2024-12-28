@@ -1,0 +1,107 @@
+@use "../sass-toolkit" as st;
+@use "../config";
+
+
+$mobile-width: 375;
+$desktop-width:700;
+
+$padding-t: 28px;
+$padding-lr: 24px;
+
+.card {
+    //border-radius: st.px2rem(5); mobile
+    border-radius: st.px2rem(8);
+    box-shadow: var(--card-box-shadow);
+    min-width: min-content;
+    max-width: 635px;
+
+    & > :first-child {
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+    }
+
+    & > :last-child {
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+    }
+}
+// Section `Join...`
+.section-join {
+    background-color: var(--card-background-1);
+    //padding: 28px 24px 32px 24px; mobile
+    padding: 40px;
+
+    h1 {
+        //Font
+        @include config.font-main-heading;
+        color: var(--card-background-2);
+        margin-bottom: 24px;
+    }
+    h2 {
+        $mb-mobile: 16;
+        $mb-desktop: 11;
+        //Font
+        @include config.font-second-heading;
+        color: var(--button-background);
+        margin-bottom: st.linear-func-clamp($mb-desktop, $desktop-width, $mb-mobile, $mobile-width);
+    }
+    p {
+        //Font
+        @include config.font-main-paragraph;
+        color: var(--paragraph-text);
+    }
+}
+
+// Container for sections `Sign-up` && `Why Us`
+.container {
+    background-color: var(--card-background-2);
+    color: var(--card-background-1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+    h2 {
+        padding-bottom: 17px;
+        @include config.font-third-heading;
+    }
+}
+
+// Section `Sing-Up`
+.section-sing-up {
+    //padding: 24px; mobile
+    padding: 40px;
+
+    .price-box {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+    }
+
+    .price-desc {
+        margin-top: 4px;
+        margin-bottom: 26px;
+    }
+
+    p {
+        @include config.font-third-paragraph; // Working on sign up section text
+    }
+    .large-text {
+        @include config.font-large-text;
+    }
+    .text-50 {
+        @include config.font-third-paragraph-50;
+    }
+}
+
+// Section `Why Us`
+.section-why-us {
+    background-color: var(--card-background-3);
+    //padding: 24px; mobile
+    padding: 40px;
+
+    ul {
+        padding: 0;
+        @include config.font-second-paragraph;
+        color: var(--paragraph-text-2);
+        list-style: none;
+    }
+}

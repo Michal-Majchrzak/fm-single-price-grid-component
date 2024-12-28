@@ -1,9 +1,15 @@
 @use "sass-toolkit" as st;
 @use "config";
 @use "components";
+@use "views";
 
 :root {
     @include config.colors-definitions;
     @include config.shadows-definitions;
     @include config.font-default;
+}
+
+body {
+    background-color: var(--main-background);
+    padding: 72px 32px 62px;
 }
